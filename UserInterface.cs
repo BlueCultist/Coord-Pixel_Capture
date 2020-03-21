@@ -321,7 +321,7 @@ namespace Coord_Pixel_Grabber
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                dataTable.Rows[i][0] = String.Empty;
+                dataTable.Rows[i][0] = string.Empty;
                 dataTable.Rows[i][1] = string.Empty;
                 dataTable.Rows[i][2] = string.Empty;
             }
@@ -375,10 +375,11 @@ namespace Coord_Pixel_Grabber
             {
                 string[] lines = File.ReadAllLines(file, Encoding.UTF8);
                 int index = 0;
+                int rowsCount = dataTable.Rows.Count;
 
                 foreach (string line in lines)
                 {
-                    if(index < dataTable.Rows.Count)
+                    if(index < rowsCount)
                     {
                         dataTable.Rows[index][2] = line;
                         index++;
